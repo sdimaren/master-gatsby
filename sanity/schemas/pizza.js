@@ -1,10 +1,8 @@
 import { MdLocalPizza as icon } from 'react-icons/md';
 
 export default {
-  // Computer name
   name: 'pizza',
-  // Visible title
-  title: 'pizzas',
+  title: 'Pizzas',
   icon,
   type: 'document',
   fields: [
@@ -16,7 +14,7 @@ export default {
     },
     {
       name: 'slug',
-      title: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'name',
