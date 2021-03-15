@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby';
 import path from 'path';
 import fetch from 'isomorphic-fetch';
 
@@ -61,7 +60,6 @@ async function fetchBeersAndTurnIntoNodes({
 }) {
   const res = await fetch('https://api.sampleapis.com/beers/ale');
   const beers = await res.json();
-  console.log(beers);
   for (const beer of beers) {
     const nodeMeta = {
       id: createNodeId(`beer-${beer.name}`),
@@ -99,7 +97,6 @@ export async function turnSlicemastersIntoPages({ graphql, actions }) {
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
   Array.from({ length: pageCount }).forEach((_, i) => {
-    console.log(`Creating page ${i}`);
     actions.createPage({
       path: `/slicemasters/${i + 1}`,
       component: path.resolve('./src/pages/slicemasters.js'),
