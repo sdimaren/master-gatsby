@@ -25,6 +25,9 @@ const OrderStyles = styled.form`
   legend {
     border-width: unset;
   }
+  .mapleSyrup {
+    display: none;
+  }
 `;
 
 export default OrderStyles;
